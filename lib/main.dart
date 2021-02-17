@@ -1,20 +1,47 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(DicePage());
+  return runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.teal,
+        appBar: AppBar(
+          title: Text('Dicey'),
+          backgroundColor: Colors.teal,
+        ),
+        body: DicePage(),
+      ),
+    ),
+  );
 }
 
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.red,
-        appBar: AppBar(
-          title: Text('Dice'),
-          backgroundColor: Colors.red,
+    var lDNumber = 6; //lDNumber is short for LeftDiceNumber
+    return Center(
+      child: Center(
+        child: Row(
+          children: [
+            Expanded(
+              child: TextButton(
+                onPressed: () {
+                  print('Left dice got pressed');
+                },
+                child: Image.asset('images/dice$lDNumber.png'),
+              ),
+            ),
+            Expanded(
+              child: TextButton(
+                onPressed: () {
+                  print('Right dice got pressed');
+                },
+                child: Image.asset('images/dice2.png'),
+              ),
+            ),
+          ],
         ),
-        body: DicePage(),
       ),
     );
   }
