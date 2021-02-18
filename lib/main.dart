@@ -9,6 +9,7 @@ void main() {
         backgroundColor: Colors.teal,
         appBar: AppBar(
           title: Text('Dicey'),
+          centerTitle: true,
           backgroundColor: Colors.teal,
         ),
         body: DicePage(),
